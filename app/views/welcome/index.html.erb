@@ -1,0 +1,13 @@
+<h1>James's Blog</h1>
+<p>Welcome to my Rails learning!</p>
+<% @posts.each do |post| %>
+  <h3><%= post.title %></h3>
+  <p>Published at <%= post.created_at %></p>
+  <%= post.body %>
+  <hr></hr>
+<% end %>
+
+<%= will_paginate @posts %>
+
+<%= link_to "create new post", new_post_path %>
+<%= link_to "to Admin section", posts_path %>
